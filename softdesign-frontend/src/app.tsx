@@ -1,4 +1,5 @@
 import React from 'react';
+import { ComicProvider } from './contexts/comics';
 import Navigation from './routes/navigation';
 import GlobalStyle from './styles/global';
 
@@ -7,8 +8,10 @@ import GlobalStyle from './styles/global';
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <Navigation />
-      <GlobalStyle />
+      <ComicProvider>
+        <Navigation />
+        <GlobalStyle />
+      </ComicProvider>
     </React.Fragment>
   )
 }
