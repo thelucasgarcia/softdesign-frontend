@@ -1,16 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.a`
-    width: 200px;
-    height: 340px;
+interface ContainerInterface {
+    active: boolean
+}
+
+export const Container = styled.a<ContainerInterface>`
+    width: 14%;
+    min-width: 250px;
+    height: 20%;
+    min-height: 340px;
     position: relative;
     transition: all .2s ease-in-out;
     overflow: hidden;
     display: inline-block;
     background: #000;
-    border-radius: 1rem;
-    transform-origin: center;
-    will-change: transform;
+    box-shadow: 0px 0px 20px ${props => props.active ? props.theme.colors.primary : 'black'};
     &:hover {
         transform: scale(1.05);
     }
@@ -56,12 +60,9 @@ export const Title = styled.span`
     margin-bottom: 5px;
     color: #fff;
     font-size: 1rem;
-    
 `
 
-export const Caption = styled.p`
-
-`
 export const Date = styled.p`
-    font-size: 1.2rem ;
+    font-size: 0.8rem ;
+    margin: 0
 `

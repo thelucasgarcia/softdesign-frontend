@@ -1,13 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: 'Poppins', sans-serif;
+  }
+
   body, html {
     display: block;
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #020202;

@@ -29,7 +29,6 @@ export const MarvelLogo = styled.img.attrs({
     width: 150px;
 `
 
-
 export const Title = styled.h1`
     color: white;
     font-weight: bold;

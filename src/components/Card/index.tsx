@@ -1,6 +1,7 @@
 import React from 'react';
+import { toHttps } from '../../hooks/services';
 
-import { Caption, Container, Date, Title, Image, Info } from './styles';
+import { Container, Date, Title, Image, Info } from './styles';
 
 interface CardInterface {
     thumbnail: string;
@@ -8,15 +9,13 @@ interface CardInterface {
     caption: string,
     date: any,
     id: number,
-
+    active: boolean
 }
 
-const Card: React.FC<CardInterface> = ({ id, date, title, caption, thumbnail }) => {
+const Card: React.FC<CardInterface> = ({ id, date, title, caption, active, thumbnail }) => {
     return (
-        <Container>
-            <picture>
-                <Image src={thumbnail}/>
-            </picture>
+        <Container active={active}>
+            <Image src={toHttps(thumbnail)}/>
             <Info>
                 <Title>{title}</Title>
                 <Date>{date}</Date>

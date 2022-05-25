@@ -12,7 +12,9 @@ function toUrl<T extends Record<any, any>>(url: string, params?: T) {
     return Object.keys(params || {}).length ? `${url}?${toQueryString(params)}` : url;
 }
 
-
+export function toHttps(url: string) {
+    return url.replace('http://','https://');
+}
 
 export const resources = {
     comics: {
