@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../../components/Button';
 
 // import { Container } from './styles';
 
 const NotFound: React.FC = () => {
   return <div>
     <h1>NotFound</h1>
-    <Link to={'app'}>
-      ir para app
+      
+    <Link to={'/'}>
+      Voltar para home
     </Link>
   </div> 
 }

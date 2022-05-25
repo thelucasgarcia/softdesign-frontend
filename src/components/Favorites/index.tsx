@@ -70,11 +70,11 @@ const Favorites: React.FC = () => {
                             </Delete>
                         </Item>
                     ))}
+                </List>
                     <Paginate total={favorites.length} defaultPageSize={PAGE_SIZE} onChange={changePage} />
                     <Button onClick={sendEmail} style={{ marginTop: 15 }}>
                         Enviar por email
                     </Button>
-                </List>
             </Container>
         </Container>
     );

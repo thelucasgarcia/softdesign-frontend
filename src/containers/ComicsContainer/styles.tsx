@@ -7,6 +7,11 @@ export const Wrapper = styled.section.attrs({
     display: flex;
     margin: 0% 10%;
     margin-top: 50px;
+    gap: 30px;
+    
+    @media only screen and (max-width: 992px) {
+        flex-direction: column
+    }
 `
 export const Box = styled.div<{ flex: number }>`
     display: flex;
@@ -31,8 +36,4 @@ export const Title = styled.h1`
 export const NotFoundText = styled.h1`
     text-align: center;
     font-size: clamp(1rem, 1vw, 3rem);
-`
-
-export const Button = styled.button`
-
 `

@@ -5,3 +5,4 @@ react-hook-form
 yup
 lodash
 sweetalert2
+@emailjs

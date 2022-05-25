@@ -5,7 +5,8 @@ const theme = {
         primary: "#EC1D24",
         text: "#FFF",
         light: '#FAfAFA',
-        background: "#202020",
+        dark: "#202020",
+        background: '#121212',
     }
 } as const;
 

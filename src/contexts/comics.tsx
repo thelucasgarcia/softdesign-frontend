@@ -25,7 +25,7 @@ export const ComicProvider = ({ children }: ContextProvider) => {
     useEffect(() => {
         if (term) {
             setComics(null);
-            fetchComics({ title: term, limit: 10 });
+            fetchComics({ title: term, limit: 8 });
         }
     }, [term]);
 

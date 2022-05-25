@@ -53,7 +53,7 @@ export const RcPagination = styled(Pagination)`
   }
   .rc-pagination-item-active {
     font-weight: 500;
-    background: #fff;
+    background: ${props => props.theme.colors.light};
     border-color: ${props => props.theme.colors.primary};
   }
   .rc-pagination-item-active a {
@@ -102,7 +102,7 @@ export const RcPagination = styled(Pagination)`
     user-select: none;
   }
   .rc-pagination-prev:hover svg, .rc-pagination-next:hover svg {
-    border-color: #40a9ff;
+    border-color: ${props => props.theme.colors.primary};
   }
   .rc-pagination-prev .rc-pagination-item-link, .rc-pagination-next .rc-pagination-item-link {
     display: block;
@@ -110,7 +110,7 @@ export const RcPagination = styled(Pagination)`
     height: 100%;
     font-size: 12px;
     text-align: center;
-    background-color: #fff;
+    background-color: ${props => props.theme.colors.light};
     border-radius: 2px;
     outline: none;
     transition: all 0.3s;

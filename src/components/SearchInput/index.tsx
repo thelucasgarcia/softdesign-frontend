@@ -19,12 +19,12 @@ interface SearchInpuInterface {
 }
 
 const SearchInput: React.FC<SearchInpuInterface> = ({ callback }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
-        defaultValues: {
-            term: 'marvel'
-        }
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();
+
+    const onSubmit = handleSubmit(data => {
+        callback(data);
+        reset({ term: '' });
     });
-    const onSubmit = handleSubmit(callback);
 
     return (
         <SearchBar>

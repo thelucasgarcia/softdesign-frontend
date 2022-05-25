@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin-right: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -22,7 +21,7 @@ export const List = styled.ul`
 `
 export const Item = styled.li`
     display: flex;
-    background: ${props => props.theme.colors.background};
+    background: ${props => props.theme.colors.dark};
     padding: 15px;
     border-radius: 5px;
     gap: 20px;
@@ -35,7 +34,7 @@ export const Thumbnail = styled.img`
 `
 
 export const Name = styled.span`
-    font-size: clamp(0.3rem, 1vw, 0.8rem);
+    font-size: clamp(0.8rem, 1vw, 1rem);
 `
 
 export const Delete = styled.button`

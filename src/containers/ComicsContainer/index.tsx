@@ -1,12 +1,13 @@
 import React from 'react';
 import { scroller } from 'react-scroll';
+import Button from '../../components/Button';
 import Card from '../../components/Card';
 import Favorites from '../../components/Favorites';
 import Paginate from '../../components/Paginate';
 import { useComics, useFavorites } from '../../hooks/context';
 import useScrollTo from '../../hooks/useScrollTo';
 
-import { Box, Button, Container, NotFoundText, Title, Wrapper } from './styles';
+import { Box, Container, NotFoundText, Title, Wrapper } from './styles';
 
 const ComicsContainer: React.FC = () => {
   const { comics, fetchComics, term } = useComics();
@@ -63,7 +64,7 @@ const ComicsContainer: React.FC = () => {
 
         <Paginate
           total={comics?.data.total}
-          defaultPageSize={5}
+          defaultPageSize={8}
           onChange={changePage}
         />
       </Box>
