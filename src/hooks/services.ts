@@ -18,12 +18,16 @@ export function toHttps(url: string) {
 
 export const resources = {
     comics: {
-        one: (comicId: string) => `/comics/${comicId}`,
+        one: (comicId: number) => `/comics/${comicId}`,
         all: (params?: PaginateInterface) => toUrl('/comics', params),
     }
 }
 
 export function allComics(params?: PaginateInterface, config?: AxiosRequestConfig) {
     return api.get<ComicsResponse>(resources.comics.all({ ...params }), config);
+}
+
+export function oneComic(id: number, config?: AxiosRequestConfig) {
+    return api.get<ComicsResponse>(resources.comics.one(id), config);
 }
 

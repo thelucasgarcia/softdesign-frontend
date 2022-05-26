@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import { IconBase } from 'react-icons/lib';
+import Swal from 'sweetalert2';
 import { useFavorites } from '../../hooks/context';
 import Paginate from '../Paginate';
-import Swal from 'sweetalert2';
-import emailjs from '@emailjs/browser';
-import { renderToStaticMarkup, renderToString } from 'react-dom/server'
+import Button from '../Button';
+import useEmail from '../../hooks/email';
 
 import {
     Container, Title, List,
@@ -14,9 +13,7 @@ import {
     Name,
     Delete
 } from './styles';
-import Button from '../Button';
-import SendFavoritesTemplate from '../../styles/email/SendFavoritesTemplate';
-import useEmail from '../../hooks/email';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const PAGE_SIZE = 5;
 
@@ -24,6 +21,9 @@ const Favorites: React.FC = () => {
     const { favorites, toggleFavorite, clearFavorites } = useFavorites();
     const [currentPage, setCurrentPage] = useState(1);
     const { sendFavoriteEmail } = useEmail();
+    const navigate = useNavigate();
+    const location = useLocation();
+
     function changePage(current: number) {
         setCurrentPage(current)
     }
@@ -63,7 +63,9 @@ const Favorites: React.FC = () => {
                         <Item key={result.id}>
                             <span>
                                 <Thumbnail src={result.image} />
-                                <Name>{result.title}</Name>
+                                <Name onClick={() => navigate(`comic/${result.id}`, { state: {
+                                    backgroundLocation: location
+                                }})}>{result.title}</Name>
                             </span>
                             <Delete onClick={() => toggleFavorite(result)}>
                                 <FaTrash />

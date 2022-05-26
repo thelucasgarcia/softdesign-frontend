@@ -1,5 +1,4 @@
 import React from 'react';
-import { scroller } from 'react-scroll';
 import Button from '../../components/Button';
 import Card from '../../components/Card';
 import Favorites from '../../components/Favorites';
@@ -13,6 +12,7 @@ const ComicsContainer: React.FC = () => {
   const { comics, fetchComics, term } = useComics();
   const { favorites, toggleFavorite } = useFavorites();
   const { scrollToSearchBar } = useScrollTo();
+
   function changePage(current: number, pageSize: number) {
     fetchComics({ offset: (current - 1 || 0) * pageSize, limit: pageSize, title: term })
   }
@@ -30,7 +30,7 @@ const ComicsContainer: React.FC = () => {
 
   return (
     <Wrapper>
-      
+
       <Box flex={favorites.length ? 1 : 0}>
         <Favorites />
       </Box>
@@ -39,26 +39,15 @@ const ComicsContainer: React.FC = () => {
         <Title>{comics.data.total} Resultados: {term}</Title>
         <Container>
           {comics?.data.results.map((result) => (
-            <div
+            <Card
               key={result.id.toString()}
-              onClick={() => {
-                toggleFavorite({
-                  id: result.id,
-                  title: result.title,
-                  details: result.description,
-                  image: result.thumbnail.path + '/standard_medium.' + result.thumbnail.extension
-                })
-              }}>
-
-              <Card
-                active={favorites.some(x => x.id === result.id)}
-                id={result.id}
-                title={result.title}
-                thumbnail={result.thumbnail.path + '/portrait_fantastic.' + result.thumbnail.extension}
-                caption={result.description}
-                date={new Date(result.dates[0].date).getFullYear()}
-              />
-            </div>
+              active={favorites.some(x => x.id === result.id)}
+              id={result.id}
+              title={result.title}
+              thumbnail={result.thumbnail}
+              description={result.description}
+              date={new Date(result.dates[0].date).getFullYear().toString()}
+            />
           ))}
         </Container>
 

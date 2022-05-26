@@ -35,6 +35,8 @@ export const Thumbnail = styled.img`
 
 export const Name = styled.span`
     font-size: clamp(0.8rem, 1vw, 1rem);
+    cursor: pointer;
+    text-decoration: underline;
 `
 
 export const Delete = styled.button`

@@ -1,17 +1,27 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router, useLocation } from "react-router-dom";
 import Home from '../pages/Home';
+import ComicModal from '../pages/ComicModal';
 import NotFound from '../pages/NotFound';
-// import { Container } from './styles';
 
 const Navigation: React.FC = () => {
+    const location = useLocation();
+    const state = location.state as { backgroundLocation?: Location };
+    
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
+        <React.Fragment>
+
+            <Routes location={state?.backgroundLocation || location}>
+                <Route path='/' element={<Home />} />
                 <Route path="/*" element={<NotFound />} />
             </Routes>
-        </Router>
+
+            {state?.backgroundLocation && (
+                <Routes>
+                    <Route path="/comic/:id" element={<ComicModal />} />
+                </Routes>
+            )}
+        </React.Fragment>
     );
 }
 
