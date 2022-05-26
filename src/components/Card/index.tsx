@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useFavorites } from '../../hooks/context';
 import { toHttps } from '../../hooks/services';
-import { FaHeart } from 'react-icons/fa';
 import { MdBookmarkAdd, MdBookmarkAdded } from 'react-icons/md';
 
 import { Container, Date, Title, Image, Info, Favorite } from './styles';

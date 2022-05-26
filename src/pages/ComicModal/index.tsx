@@ -1,12 +1,11 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Modal from 'react-modal';
 import { oneComic, toHttps } from '../../hooks/services';
 import { ComicInterface } from '../../types/comic.interface';
-import styled, { useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 import _ from 'lodash';
-// import { Container } from './styles'
-;
+
 Modal.setAppElement('#root')
 const ComicModal: React.FC = () => {
     const navigate = useNavigate();

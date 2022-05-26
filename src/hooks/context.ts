@@ -3,9 +3,9 @@ import { ComicContext } from '../contexts/comics';
 import { FavoriteContext } from '../contexts/favorites';
 
 export function useComics() {
-    return useContext(ComicContext)
+    return useContext(ComicContext);
 }
 
 export function useFavorites() {
-    return useContext(FavoriteContext)
+    return useContext(FavoriteContext);
 }

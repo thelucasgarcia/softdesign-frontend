@@ -23,7 +23,6 @@ interface ContextProvider {
 export const FavoriteProvider = ({ children }: ContextProvider) => {
     const [favorites, setFavorites] = useState<FavoriteInterface[]>([]);
 
-    
     const toggleFavorite = useCallback<ContextInterface['toggleFavorite']>((favorite) => {
         hasFavorite(favorites, favorite.id) ? removeFavorite(favorite) : addFavorite(favorite);
     }, [favorites]);

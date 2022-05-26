@@ -1,7 +1,4 @@
-import React from 'react';
 import { scroller } from 'react-scroll';
-
-// import { Container } from './styles';
 
 const useScrollTo = () => {
   return {
