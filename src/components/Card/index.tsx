@@ -42,7 +42,7 @@ const Card: React.FC<CardInterface> = ({ id, date, title, description, active, t
             <Favorite active={active} onClick={handleFavorite}>
                 {active ? <MdBookmarkAdded /> : <MdBookmarkAdd/>}
             </Favorite>
-            <Image src={toHttps(thumbnail.path + "/portrait_fantastic." + thumbnail.extension)} />
+            <Image src={toHttps(thumbnail.path + "/portrait_fantastic." + thumbnail.extension)} title={title}/>
             <Info onClick={handleModal}>
                 <Title>{title}</Title>
                 <Date>{date}</Date>
