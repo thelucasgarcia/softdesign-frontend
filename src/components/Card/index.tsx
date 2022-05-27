@@ -31,11 +31,11 @@ const Card: React.FC<CardInterface> = ({ id, date, title, description, active, t
         });
     }
 
-    function handleModal() {
-        navigate(`comic/${id}`, {
-            state: { backgroundLocation: location }
+    const handleModal = () => {
+        navigate(`/comic/${id}`, {
+            state: { background: location }
         });
-    }
+    };
 
     return (
         <Container title={title}>

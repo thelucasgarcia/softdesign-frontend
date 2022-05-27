@@ -1,18 +1,21 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Modal from "react-modal";
 import { oneComic, toHttps } from "../../hooks/services";
 import { ComicInterface } from "../../types/comic.interface";
 import { useTheme } from "styled-components";
 import _ from "lodash";
+import { ImSpinner3 } from "react-icons/im";
+import { Container } from "./styles";
 
 Modal.setAppElement("#root");
+
 const ComicModal: React.FC = () => {
     const navigate = useNavigate();
     const { id } = useParams<"id">();
     const [comic, setComic] = useState<ComicInterface>({} as ComicInterface);
 
-    const customStyles = {
+    const customStyles: Modal.Styles = {
         overlay: {
             zIndex: 999,
             background: "rgb(0 0 0 / 85%)",
@@ -26,7 +29,8 @@ const ComicModal: React.FC = () => {
             transform: "translate(-50%, -50%)",
             border: "none",
             background: useTheme().colors.background,
-            width: "clamp(700px, 1vw, 100%)"
+            display: "flex",
+            placeContent: "center"
         },
     };
 
@@ -34,7 +38,7 @@ const ComicModal: React.FC = () => {
         navigate(-1);
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const controller = new AbortController();
         oneComic(Number(id), { signal: controller.signal }).then(result => {
             if (result.data.data.total) {
@@ -46,19 +50,11 @@ const ComicModal: React.FC = () => {
         return () => { controller.abort(); };
     }, []);
 
-    if (_.isEmpty(comic)) return null;
-
-    return (
-        <Modal
-            isOpen={true}
-            onRequestClose={onDismiss}
-            shouldCloseOnEsc
-            shouldCloseOnOverlayClick
-            style={customStyles}
-        >
-            <div style={{ display: "flex", gap: "30px", placeContent: "center" }}>
+    function handleContent() {
+        return (
+            <React.Fragment>
                 <div style={{ display: "flex", justifyContent: "flex-end", flex: 1 }}>
-                    <img style={{ height: "fit-content", width: "max-content" }} src={toHttps(comic.thumbnail.path + "/clean." + comic.thumbnail.extension)} />
+                    <img style={{ width: "100%", maxWidth: "600px" }} src={toHttps(comic.thumbnail.path + "/clean." + comic.thumbnail.extension)} />
                 </div>
                 <div style={{ flex: 1 }}>
                     <h3>{comic.title}</h3>
@@ -82,7 +78,30 @@ const ComicModal: React.FC = () => {
                     <br />
                     <div>{comic.description || comic.variantDescription}</div>
                 </div>
+            </React.Fragment>
+        );
+    }
+    function handleLoading() {
+        return (
+            <div style={{ height: "100%", display: "flex", placeItems: "center"}}>
+                <ImSpinner3 size={40} className="spinner"/>
             </div>
+        );
+    }
+    
+    return (
+        <Modal
+            isOpen={!!id}
+            onAfterOpen={() => document.body.style.overflow = "hidden"}
+            onAfterClose={() => document.body.style.overflow = "auto"}
+            onRequestClose={onDismiss}
+            shouldCloseOnEsc
+            shouldCloseOnOverlayClick
+            style={customStyles}
+        >
+             <Container>
+                {_.isEmpty(comic) ? handleLoading() : handleContent()}
+             </Container>
         </Modal>
     );
 };

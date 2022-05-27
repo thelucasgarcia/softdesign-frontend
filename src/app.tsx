@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 import theme from "./config/theme";
 import { ComicProvider } from "./contexts/comics";
 import { FavoriteProvider } from "./contexts/favorites";
@@ -10,14 +11,16 @@ import "sweetalert2/dist/sweetalert2.css";
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme}>
-        <ComicProvider>
-          <FavoriteProvider>
-            <Navigation />
-            <GlobalStyle />
-          </FavoriteProvider>
-        </ComicProvider>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <ComicProvider>
+            <FavoriteProvider>
+              <Navigation />
+              <GlobalStyle />
+            </FavoriteProvider>
+          </ComicProvider>
+        </ThemeProvider>
+      </BrowserRouter>
     </React.Fragment>
   );
 };

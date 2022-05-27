@@ -6,15 +6,16 @@ import NotFound from "../pages/NotFound";
 
 const Navigation: React.FC = () => {
     const location = useLocation();
-    const state = location.state as { backgroundLocation?: Location };
+    const state = location.state as { background?: Location };
+    
     return (
         <React.Fragment>
-            <Routes location={state?.backgroundLocation || location}>
+            <Routes location={state?.background || location}>
                 <Route index element={<Home />} />
                 <Route path="404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to='404'/>}/>
             </Routes>
-            {state?.backgroundLocation && (
+            {state?.background && (
                 <Routes>
                     <Route path="/comic/:id" element={<ComicModal />} />
                 </Routes>

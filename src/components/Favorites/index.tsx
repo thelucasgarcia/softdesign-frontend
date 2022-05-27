@@ -64,7 +64,7 @@ const Favorites: React.FC = () => {
                             <span>
                                 <Thumbnail src={result.image} />
                                 <Name onClick={() => navigate(`comic/${result.id}`, { state: {
-                                    backgroundLocation: location
+                                    background: location
                                 }})}>{result.title}</Name>
                             </span>
                             <Delete onClick={() => toggleFavorite(result)}>
