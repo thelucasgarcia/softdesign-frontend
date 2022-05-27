@@ -17,7 +17,7 @@ export const Container = styled.div`
     }
 
     div {
-        padding: 50px;
+        padding: 0 50px;
         background: rgb(255 255 255 / 80%);
         height: 100%;
         width: 100%;

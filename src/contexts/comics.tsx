@@ -3,6 +3,7 @@ import useScrollTo from "../hooks/useScrollTo";
 import { allComics } from "../hooks/services";
 import { ComicsResponse } from "../types/comicsResponse.interface";
 import PaginateInterface from "../types/paginate.interface";
+import Swal from "sweetalert2";
 
 export type ContextInterface = {
     comics: ComicsResponse | null,
@@ -21,7 +22,7 @@ export const ComicProvider = ({ children }: ContextProvider) => {
     const [comics, setComics] = useState<ComicsResponse | null>(null);
     const [term, setTerm] = useState<string>("");
     const { scrollToCards } = useScrollTo();
-    
+
     useEffect(() => {
         if (term) {
             setComics(null);
@@ -36,7 +37,11 @@ export const ComicProvider = ({ children }: ContextProvider) => {
     }, [comics]);
 
     const fetchComics = useCallback((params?: PaginateInterface) => {
-        allComics(params).then(response => { setComics(response.data); });
+        allComics(params)
+            .then(response => { setComics(response.data); })
+            .catch(error => {
+                Swal.fire({ title: "Ocorreu um erro!", icon: "error", text: error.text, showConfirmButton: false, timer: 1500 });
+            });
     }, []);
 
     const changeTerm = useCallback((term: string) => {

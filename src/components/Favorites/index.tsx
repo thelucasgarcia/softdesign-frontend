@@ -62,7 +62,7 @@ const Favorites: React.FC = () => {
                     {displayFavorites.map((result) => (
                         <Item key={result.id}>
                             <span>
-                                <Thumbnail src={result.image} />
+                                <Thumbnail src={result.image} title={result.title} />
                                 <Name onClick={() => navigate(`comic/${result.id}`, { state: {
                                     background: location
                                 }})}>{result.title}</Name>
