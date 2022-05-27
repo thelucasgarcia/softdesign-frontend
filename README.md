@@ -9,7 +9,7 @@ Disponível em: [https://softdesign-frontend.vercel.app/](https://softdesign-fro
 A tela principal exibe uma imagem dos vingadores, com um input de pesquisa, ao pesquisar sobre determinado quadrinhos, a página rola até uma lista de quadrinhos com paginação, nessa lista temos cards que exibem a capa, título e ano do quadrinho, ao clicar na imagem, abre uma modal com mais informações do quadrinho, ao clicar no ícone de favoritos, exibe ao lado uma lista de quadrinhos favoritados, tendo opção de enviar por email os favoritos ao clicar no botão e inserir o email. Caso o usuário insira uma url que não é invalida,
 retorna uma página de erro 404 - página não encontrada. 
 
-![image](./assets/thumbnail.jpg)
+![image](./assets/thumb.jpg)
 
 ## Solução adotada
 
