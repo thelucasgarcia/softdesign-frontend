@@ -1,10 +1,10 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useFavorites } from '../../hooks/context';
-import { toHttps } from '../../hooks/services';
-import { MdBookmarkAdd, MdBookmarkAdded } from 'react-icons/md';
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useFavorites } from "../../hooks/context";
+import { toHttps } from "../../hooks/services";
+import { MdBookmarkAdd, MdBookmarkAdded } from "react-icons/md";
 
-import { Container, Date, Title, Image, Info, Favorite } from './styles';
+import { Container, Date, Title, Image, Info, Favorite } from "./styles";
 interface CardInterface {
     id: number,
     title: string,
@@ -26,15 +26,15 @@ const Card: React.FC<CardInterface> = ({ id, date, title, description, active, t
         toggleFavorite({
             id: id, 
             title: title,
-            image: toHttps(thumbnail.path + '/standard_medium.' + thumbnail.extension),
+            image: toHttps(thumbnail.path + "/standard_medium." + thumbnail.extension),
             details: description
-        })
+        });
     }
 
     function handleModal() {
         navigate(`comic/${id}`, {
             state: { backgroundLocation: location }
-        })
+        });
     }
 
     return (
@@ -42,13 +42,13 @@ const Card: React.FC<CardInterface> = ({ id, date, title, description, active, t
             <Favorite active={active} onClick={handleFavorite}>
                 {active ? <MdBookmarkAdded /> : <MdBookmarkAdd/>}
             </Favorite>
-            <Image src={toHttps(thumbnail.path + '/portrait_fantastic.' + thumbnail.extension)} />
+            <Image src={toHttps(thumbnail.path + "/portrait_fantastic." + thumbnail.extension)} />
             <Info onClick={handleModal}>
                 <Title>{title}</Title>
                 <Date>{date}</Date>
             </Info>
         </Container>
-    )
-}
+    );
+};
 
 export default React.memo(Card);

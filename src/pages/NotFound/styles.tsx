@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import notfoundbackground from '../../assets/images/notfound.jpg';
+import styled from "styled-components";
+import notfoundbackground from "../../assets/images/notfound.jpg";
 
 export const Container = styled.div`
     display: flex;

@@ -1,4 +1,4 @@
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const useEmail = () => {
     return {
@@ -8,9 +8,9 @@ const useEmail = () => {
                 import.meta.env.VITE_MAILJS_TEMPLATE, 
                 params, 
                 import.meta.env.VITE_MAILJS_PUBLICKEY
-            )
+            );
         }
-    }
-}
+    };
+};
 
 export default useEmail;

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.a`
     width: 14%;
@@ -37,7 +37,7 @@ export const Image = styled.img`
     left: 0;
     width: 100%;
     height: 100%;
-`
+`;
 export const Info = styled.div`
     height: 100%;
     top: unset;
@@ -51,7 +51,7 @@ export const Info = styled.div`
     width: -webkit-fill-available;
     min-width: fit-content;
     justify-content: flex-end;
-`
+`;
 
 export const Favorite = styled.div<{ active: boolean }>`
     top: 5px;
@@ -63,16 +63,16 @@ export const Favorite = styled.div<{ active: boolean }>`
     &:hover {
         transform: scale(1.2);
     }
-`
+`;
 export const Title = styled.span`
     font-weight: 600;
     display: block;
     margin-bottom: 5px;
     color: #fff;
     font-size: 1rem;
-`
+`;
 
 export const Date = styled.p`
     font-size: 0.8rem ;
     margin: 0
-`
+`;

@@ -1,7 +1,7 @@
-import React from 'react';
-import { FaArrowLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { Container } from './styles';
+import React from "react";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { Container } from "./styles";
 
 const NotFound: React.FC = () => {
   return (
@@ -14,12 +14,12 @@ const NotFound: React.FC = () => {
       <p>
         Verifique se digitou o endereço corretamente ou volte para sua página anterior
       </p> 
-      <Link to={'/'}>
+      <Link to={"/"}>
         <FaArrowLeft/> Voltar para home
       </Link>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 export default NotFound;

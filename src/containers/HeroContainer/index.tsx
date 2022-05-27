@@ -1,7 +1,7 @@
-import React from 'react';
-import { useComics } from '../../hooks/context';
-import { Container, MarvelLogo, Title, Wrapper } from './styles';
-import SearchInput from '../../components/SearchInput';
+import React from "react";
+import { useComics } from "../../hooks/context";
+import { Container, MarvelLogo, Title, Wrapper } from "./styles";
+import SearchInput from "../../components/SearchInput";
 
 const HeroContainer: React.FC = () => {
   const { changeTerm } = useComics();
@@ -15,6 +15,6 @@ const HeroContainer: React.FC = () => {
         </Container>
       </Wrapper>
   );
-}
+};
 
 export default HeroContainer;

@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
-import Button from './index';
+import Button from "./index";
 
-describe('Button Component', () => {
-    it('should render a button', () => {
-        render(<Button />)
-    })
-})
+describe("Button Component", () => {
+    it("should render a button", () => {
+        render(<Button />);
+    });
+});

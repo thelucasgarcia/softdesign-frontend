@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "lint": "npx eslint src/**/*.tsx --fix"
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",

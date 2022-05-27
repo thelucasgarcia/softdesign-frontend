@@ -1,6 +1,6 @@
-import React from 'react';
-import ComicsContainer from '../../containers/ComicsContainer';
-import HeroContainer from '../../containers/HeroContainer';
+import React from "react";
+import ComicsContainer from "../../containers/ComicsContainer";
+import HeroContainer from "../../containers/HeroContainer";
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +9,6 @@ const Home: React.FC = () => {
       <ComicsContainer />
     </React.Fragment>
   );
-}
+};
 
 export default Home;

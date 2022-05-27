@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SearchBar = styled.div.attrs({
-    id: 'search-bar'
+    id: "search-bar"
 })`
     position: relative;
     height: 80px;

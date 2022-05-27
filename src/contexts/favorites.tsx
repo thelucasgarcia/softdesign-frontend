@@ -1,6 +1,4 @@
-import { createContext, useCallback, useState } from 'react';
-import _ from 'lodash';
-
+import { createContext, useCallback, useState } from "react";
 export interface FavoriteInterface {
     id: number,
     title: string,
@@ -23,24 +21,24 @@ interface ContextProvider {
 export const FavoriteProvider = ({ children }: ContextProvider) => {
     const [favorites, setFavorites] = useState<FavoriteInterface[]>([]);
 
-    const toggleFavorite = useCallback<ContextInterface['toggleFavorite']>((favorite) => {
+    const toggleFavorite = useCallback<ContextInterface["toggleFavorite"]>((favorite) => {
         hasFavorite(favorites, favorite.id) ? removeFavorite(favorite) : addFavorite(favorite);
     }, [favorites]);
     
     const hasFavorite = (array: FavoriteInterface[], id: number) => {
-        return array.some(x => x.id === id)
+        return array.some(x => x.id === id);
     };
 
     const addFavorite = (favorite: FavoriteInterface) => {
-        setFavorites(state => state.concat(favorite))
+        setFavorites(state => state.concat(favorite));
     };
 
     const removeFavorite = (favorite: FavoriteInterface) => {
         setFavorites(state => state.filter(x => x.id !== favorite.id));
-    }
+    };
 
-    const clearFavorites = useCallback<ContextInterface['clearFavorites']>(() => {
-        setFavorites([])
+    const clearFavorites = useCallback<ContextInterface["clearFavorites"]>(() => {
+        setFavorites([]);
     }, [favorites]);
 
     return (
@@ -51,5 +49,5 @@ export const FavoriteProvider = ({ children }: ContextProvider) => {
         }}>
             {children}
         </FavoriteContext.Provider>
-    )
-}
+    );
+};

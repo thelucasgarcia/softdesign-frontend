@@ -23,6 +23,16 @@ module.exports = {
     ],
     "rules": {
         "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
-}
+        "quotes": ["error", "double"],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+    },
+    
+    "settings": {
+        "react": {
+            "version": "^18.1.0",
+        },
+    },
+
+};

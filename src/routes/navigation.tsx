@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
-import Home from '../pages/Home';
-import ComicModal from '../pages/ComicModal';
-import NotFound from '../pages/NotFound';
+import Home from "../pages/Home";
+import ComicModal from "../pages/ComicModal";
+import NotFound from "../pages/NotFound";
 
 const Navigation: React.FC = () => {
     const location = useLocation();
@@ -21,6 +21,6 @@ const Navigation: React.FC = () => {
             )}
         </React.Fragment>
     );
-}
+};
 
 export default Navigation;

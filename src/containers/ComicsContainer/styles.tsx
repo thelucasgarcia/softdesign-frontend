@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.section.attrs({
     id: "cards"
@@ -12,7 +12,7 @@ export const Wrapper = styled.section.attrs({
     @media only screen and (max-width: 992px) {
         flex-direction: column
     }
-`
+`;
 export const Box = styled.div<{ flex: number }>`
     display: flex;
     flex-direction: column;
@@ -26,14 +26,14 @@ export const Container = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-`
+`;
 export const Title = styled.h1`
     text-align: center;
     font-size: clamp(1.5rem, 2vw, 3rem);
     margin: 0;
-`
+`;
 
 export const NotFoundText = styled.h1`
     text-align: center;
     font-size: clamp(1rem, 1vw, 3rem);
-`
+`;

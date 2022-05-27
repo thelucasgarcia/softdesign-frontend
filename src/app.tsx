@@ -1,11 +1,11 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import theme from './config/theme';
-import { ComicProvider } from './contexts/comics';
-import { FavoriteProvider } from './contexts/favorites';
-import Navigation from './routes/navigation';
-import GlobalStyle from './styles/global';
-import 'sweetalert2/dist/sweetalert2.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import theme from "./config/theme";
+import { ComicProvider } from "./contexts/comics";
+import { FavoriteProvider } from "./contexts/favorites";
+import Navigation from "./routes/navigation";
+import GlobalStyle from "./styles/global";
+import "sweetalert2/dist/sweetalert2.css";
 
 const App: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const App: React.FC = () => {
         </ComicProvider>
       </ThemeProvider>
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default App;

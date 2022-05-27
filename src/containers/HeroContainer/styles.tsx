@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import homeBanner from '../../assets/images/home.png';
-import MarvelImg from '../../assets/images/marvel-logo.png';
+import styled from "styled-components";
+import homeBanner from "../../assets/images/home.png";
+import MarvelImg from "../../assets/images/marvel-logo.png";
 
 export const Wrapper = styled.div`
     background-image: url(${homeBanner});
@@ -27,7 +27,7 @@ export const MarvelLogo = styled.img.attrs({
     position: absolute;
     top: 10%;
     width: 150px;
-`
+`;
 
 export const Title = styled.h1`
     color: white;
@@ -36,4 +36,4 @@ export const Title = styled.h1`
     width: min(700px, 100%);
     text-shadow: 0px 5px 10px ${props => props.theme.colors.dark};
     user-select: none;
-`
+`;

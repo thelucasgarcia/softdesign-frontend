@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { FaTrash } from 'react-icons/fa';
-import Swal from 'sweetalert2';
-import { useFavorites } from '../../hooks/context';
-import Paginate from '../Paginate';
-import Button from '../Button';
-import useEmail from '../../hooks/email';
+import React, { useState } from "react";
+import { FaTrash } from "react-icons/fa";
+import Swal from "sweetalert2";
+import { useFavorites } from "../../hooks/context";
+import Paginate from "../Paginate";
+import Button from "../Button";
+import useEmail from "../../hooks/email";
 
 import {
     Container, Title, List,
@@ -12,8 +12,8 @@ import {
     Thumbnail,
     Name,
     Delete
-} from './styles';
-import { useLocation, useNavigate } from 'react-router-dom';
+} from "./styles";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PAGE_SIZE = 5;
 
@@ -25,31 +25,31 @@ const Favorites: React.FC = () => {
     const location = useLocation();
 
     function changePage(current: number) {
-        setCurrentPage(current)
+        setCurrentPage(current);
     }
 
     const displayFavorites = favorites.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE );
 
     const sendEmail = async () => {
         const { value: email } = await Swal.fire({
-            title: 'Digite seu email para enviar seus favoritos por email',
-            input: 'email',
-            inputPlaceholder: 'Informe seu email',
-            confirmButtonText: 'Enviar por email',
+            title: "Digite seu email para enviar seus favoritos por email",
+            input: "email",
+            inputPlaceholder: "Informe seu email",
+            confirmButtonText: "Enviar por email",
             showCancelButton: true,
-            cancelButtonText: 'Cancelar',
-          })
+            cancelButtonText: "Cancelar",
+          });
           
         if (email) {
             const params = { email: email, favorites: favorites };
             sendFavoriteEmail(params).then(() => {
-                Swal.fire({ title: 'Sucesso!', icon: 'success', showConfirmButton: false, timer: 1500 })
-                .then(() => { clearFavorites() })
+                Swal.fire({ title: "Sucesso!", icon: "success", showConfirmButton: false, timer: 1500 })
+                .then(() => { clearFavorites(); });
             }, (error) => {
-                Swal.fire({ title: 'Ocorreu um erro!', icon: 'error', text: error.text, showConfirmButton: false, timer: 1500 })
+                Swal.fire({ title: "Ocorreu um erro!", icon: "error", text: error.text, showConfirmButton: false, timer: 1500 });
             });
         }
-    }
+    };
 
     if (!favorites.length) return null;
     
@@ -80,6 +80,6 @@ const Favorites: React.FC = () => {
             </Container>
         </Container>
     );
-}
+};
 
 export default Favorites;

@@ -3,10 +3,10 @@ const theme = {
         primary: "#EC1D24",
         favorite: "#ffcb00",
         text: "#FFF",
-        light: '#FAfAFA',
+        light: "#FAfAFA",
         dark: "#202020",
-        background: '#080808',
+        background: "#080808",
     }
 } as const;
 
-export default theme
+export default theme;

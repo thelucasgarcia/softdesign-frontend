@@ -1,5 +1,5 @@
-import Pagination from 'rc-pagination';
-import styled from 'styled-components';
+import Pagination from "rc-pagination";
+import styled from "styled-components";
 
 export const RcPagination = styled(Pagination)`
 
@@ -208,4 +208,4 @@ export const RcPagination = styled(Pagination)`
   }
   }
 
-`
+`;

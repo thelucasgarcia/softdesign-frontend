@@ -1,4 +1,4 @@
-import { ComicInterface } from './comic.interface'
+import { ComicInterface } from "./comic.interface";
 
 export type ComicsResponse = {
     code: number,

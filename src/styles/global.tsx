@@ -28,6 +28,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: 0;
   }
-`
+`;
 
 export default GlobalStyle;

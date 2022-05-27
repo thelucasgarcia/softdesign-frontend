@@ -1,8 +1,8 @@
-import { createContext, useCallback, useEffect, useState } from 'react';
-import useScrollTo from '../hooks/useScrollTo';
-import { allComics } from '../hooks/services';
-import { ComicsResponse } from '../types/comicsResponse.interface';
-import PaginateInterface from '../types/paginate.interface';
+import { createContext, useCallback, useEffect, useState } from "react";
+import useScrollTo from "../hooks/useScrollTo";
+import { allComics } from "../hooks/services";
+import { ComicsResponse } from "../types/comicsResponse.interface";
+import PaginateInterface from "../types/paginate.interface";
 
 export type ContextInterface = {
     comics: ComicsResponse | null,
@@ -19,7 +19,7 @@ interface ContextProvider {
 
 export const ComicProvider = ({ children }: ContextProvider) => {
     const [comics, setComics] = useState<ComicsResponse | null>(null);
-    const [term, setTerm] = useState<string>('');
+    const [term, setTerm] = useState<string>("");
     const { scrollToCards } = useScrollTo();
     
     useEffect(() => {
@@ -31,17 +31,17 @@ export const ComicProvider = ({ children }: ContextProvider) => {
 
     useEffect(() => {
         if (comics) {
-            scrollToCards()
+            scrollToCards();
         }
-    }, [comics])
+    }, [comics]);
 
     const fetchComics = useCallback((params?: PaginateInterface) => {
-        allComics(params).then(response => { setComics(response.data) })
+        allComics(params).then(response => { setComics(response.data); });
     }, []);
 
     const changeTerm = useCallback((term: string) => {
         setTerm(term);
-    }, [])
+    }, []);
 
     return (
         <ComicContext.Provider value={{
@@ -52,5 +52,5 @@ export const ComicProvider = ({ children }: ContextProvider) => {
         }}>
             {children}
         </ComicContext.Provider>
-    )
-}
+    );
+};
