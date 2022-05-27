@@ -24,7 +24,7 @@ export const Container = styled.a`
         z-index: 2;
         content: "";
         background: #000;
-        background: linear-gradient(340deg,rgba(0,0,0,.9) 0,rgba(0,0,0,.7) 40%,rgba(0,0,0,0) 100%);
+        background: linear-gradient(300deg,rgba(0,0,0,.9) 0,rgba(0,0,0,.7) 40%,rgba(0,0,0,0) 100%);
         transition: all .3s ease-in-out;
         opacity: 1;
         user-select: none;

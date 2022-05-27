@@ -10,7 +10,7 @@ const HeroContainer: React.FC = () => {
       <Wrapper>
         <Container>
           <MarvelLogo />
-          <Title>Pesquise suas historias em quadrinhos da Marvel</Title>
+          <Title>Pesquise suas histórias em quadrinhos da Marvel</Title>
           <SearchInput callback={data => changeTerm(data.term)} />
         </Container>
       </Wrapper>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Home from '../pages/Home';
 import ComicModal from '../pages/ComicModal';
 import NotFound from '../pages/NotFound';
@@ -10,8 +10,9 @@ const Navigation: React.FC = () => {
     return (
         <React.Fragment>
             <Routes location={state?.backgroundLocation || location}>
-                <Route path='/' element={<Home />} />
-                <Route path="/*" element={<NotFound />} />
+                <Route index element={<Home />} />
+                <Route path="404" element={<NotFound />} />
+                <Route path="*" element={<Navigate to='404'/>}/>
             </Routes>
             {state?.backgroundLocation && (
                 <Routes>

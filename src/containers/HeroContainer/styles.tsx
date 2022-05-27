@@ -34,5 +34,6 @@ export const Title = styled.h1`
     font-weight: bold;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     width: min(700px, 100%);
-    text-shadow: 0px 5px 10px #3c1861;
+    text-shadow: 0px 5px 10px ${props => props.theme.colors.dark};
+    user-select: none;
 `
