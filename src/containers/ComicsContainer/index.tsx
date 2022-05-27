@@ -56,6 +56,9 @@ const ComicsContainer: React.FC = () => {
           total={comics?.data.total}
           defaultPageSize={8}
           onChange={changePage}
+          style={{
+            marginBottom: "50px"
+          }}
         />
       </Box>
     </Wrapper>
