@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
             <Routes location={state?.background || location}>
                 <Route index element={<Home />} />
                 <Route path="404" element={<NotFound />} />
-                <Route path="*" element={<Navigate to='/404'/>}/>
+                <Route path="*" element={<Navigate to='404'/>}/>
             </Routes>
             {state?.background && (
                 <Routes>
