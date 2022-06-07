@@ -7,7 +7,6 @@ const NotFound: React.FC = () => {
   return (
     <Container>
       <div>
-
       <h1>404 PÁGINA NÃO ENCONTRADA </h1>
       <h2>Nem o Olho do Uatu vê sua solicitação...</h2>
       <br /><br />
@@ -21,5 +20,9 @@ const NotFound: React.FC = () => {
     </Container>
   );
 };
+
+import ReactDOM from "react-dom/client";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(<NotFound />);
 
 export default NotFound;
