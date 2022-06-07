@@ -700,7 +700,7 @@ function print() { __p += __j.call(arguments, '') }
     }
 
     
-`,lZ=()=>Q(sZ,{children:ot("div",{children:[Q("h1",{children:"404 P\xC1GINA N\xC3O ENCONTRADA "}),Q("h2",{children:"Nem o Olho do Uatu v\xEA sua solicita\xE7\xE3o..."}),Q("br",{}),Q("br",{}),Q("p",{children:"Verifique se digitou o endere\xE7o corretamente ou volte para sua p\xE1gina anterior"}),ot(mD,{to:"/",children:[Q(f7,{})," Voltar para home"]})]})}),uZ=()=>{const e=Go(),t=e.state;return ot(De.Fragment,{children:[ot(q_,{location:(t==null?void 0:t.background)||e,children:[Q(el,{index:!0,element:Q(ZX,{})}),Q(el,{path:"/404",element:Q(lZ,{})}),Q(el,{path:"*",element:Q(cD,{to:"/404"})})]}),(t==null?void 0:t.background)&&Q(q_,{children:Q(el,{path:"/comic/:id",element:Q(oZ,{})})})]})},cZ=NN`
+`,lZ=()=>Q(sZ,{children:ot("div",{children:[Q("h1",{children:"404 P\xC1GINA N\xC3O ENCONTRADA "}),Q("h2",{children:"Nem o Olho do Uatu v\xEA sua solicita\xE7\xE3o..."}),Q("br",{}),Q("br",{}),Q("p",{children:"Verifique se digitou o endere\xE7o corretamente ou volte para sua p\xE1gina anterior"}),ot(mD,{to:"/",children:[Q(f7,{})," Voltar para home"]})]})}),uZ=()=>{const e=Go(),t=e.state;return ot(De.Fragment,{children:[ot(q_,{location:(t==null?void 0:t.background)||e,children:[Q(el,{index:!0,element:Q(ZX,{})}),Q(el,{path:"404",element:Q(lZ,{})}),Q(el,{path:"*",element:Q(cD,{to:"/404"})})]}),(t==null?void 0:t.background)&&Q(q_,{children:Q(el,{path:"/comic/:id",element:Q(oZ,{})})})]})},cZ=NN`
   * {
     font-family: 'Poppins', sans-serif;
   }
@@ -767,4 +767,4 @@ function print() { __p += __j.call(arguments, '') }
               transform: rotate(359deg);
     }
   }
-`;const fZ=()=>Q(De.Fragment,{children:Q(hD,{basename:"/",children:Q(PE,{theme:IE,children:Q(YB,{children:ot(XB,{children:[Q(uZ,{}),Q(cZ,{})]})})})})});sg.createRoot(document.getElementById("root")).render(Q(fZ,{}));
+`;const fZ=()=>Q(De.Fragment,{children:Q(hD,{basename:".",children:Q(PE,{theme:IE,children:Q(YB,{children:ot(XB,{children:[Q(uZ,{}),Q(cZ,{})]})})})})});sg.createRoot(document.getElementById("root")).render(Q(fZ,{}));
