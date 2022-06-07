@@ -10,7 +10,7 @@ import "sweetalert2/dist/sweetalert2.css";
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <HashRouter>
+      <HashRouter basename='/softdesign-frontend'>
         <ThemeProvider theme={theme}>
           <ComicProvider>
             <FavoriteProvider>
