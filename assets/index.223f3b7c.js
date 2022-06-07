@@ -767,4 +767,4 @@ function print() { __p += __j.call(arguments, '') }
               transform: rotate(359deg);
     }
   }
-`;const dZ=()=>Q(De.Fragment,{children:Q(mD,{basename:"/softdesign-frontend",children:Q(PE,{theme:IE,children:Q(JB,{children:ot(ZB,{children:[Q(cZ,{}),Q(fZ,{})]})})})})});Wc.createRoot(document.getElementById("root")).render(Q(dZ,{}));
+`;const dZ=()=>Q(De.Fragment,{children:Q(mD,{children:Q(PE,{theme:IE,children:Q(JB,{children:ot(ZB,{children:[Q(cZ,{}),Q(fZ,{})]})})})})});Wc.createRoot(document.getElementById("root")).render(Q(dZ,{}));
