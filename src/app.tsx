@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import theme from "./config/theme";
 import { ComicProvider } from "./contexts/comics";
 import { FavoriteProvider } from "./contexts/favorites";
@@ -12,7 +12,7 @@ import app from "../package.json";
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <BrowserRouter basename={process.env.NODE_ENV !== "production" ? app.homepage : "/"}>
+      <HashRouter basename={process.env.NODE_ENV === "production" ? app.homepage : "/"}>
         <ThemeProvider theme={theme}>
           <ComicProvider>
             <FavoriteProvider>
@@ -21,7 +21,7 @@ const App: React.FC = () => {
             </FavoriteProvider>
           </ComicProvider>
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     </React.Fragment>
   );
 };
