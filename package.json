@@ -2,7 +2,7 @@
   "name": "softdesign-frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "softdesign-frontend/",
+  "homepage": "softdesign-frontend",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

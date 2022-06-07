@@ -12,7 +12,7 @@ import app from "../package.json";
 const App: React.FC = () => {
   return (
     <React.Fragment>
-      <BrowserRouter basename={process.env.NODE_ENV !== "production" ? app.homepage : ""}>
+      <BrowserRouter basename={process.env.NODE_ENV !== "production" ? app.homepage : "/"}>
         <ThemeProvider theme={theme}>
           <ComicProvider>
             <FavoriteProvider>
